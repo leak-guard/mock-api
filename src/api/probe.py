@@ -47,7 +47,3 @@ async def enter_pairing_mode():
 @router.post("/pair/exit")
 async def exit_pairing_mode():
     return Response(status_code=status.HTTP_200_OK)
-
-@router.get("/pair")
-async def get_probes_to_pair():
-    return JSONResponse({"probes": [get_probe_id() for _ in range(random.randint(0, 10))]})
