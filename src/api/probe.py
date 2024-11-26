@@ -24,8 +24,9 @@ def get_probe_info():
 @router.get("")
 async def get_probes():
     probe_count = random.randint(0, 10)
+    probe_ids = random.sample(range(256), probe_count)
 
-    return JSONResponse({"probes": [get_probe_info() for _ in range(probe_count)]})
+    return JSONResponse({f"{probe_ids[i]}": get_probe_info() for i in range(probe_count)})
 
 @router.get("/id/{id}")
 async def get_probe(id: int):
