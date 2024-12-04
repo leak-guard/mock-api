@@ -10,6 +10,7 @@ async def get_config():
         "passphrase": "hunter2",
         "flow_meter_impulses": 400,
         "valve_type": "no",
+        "timezone_id": 37,
     })
 
 @router.put("")
