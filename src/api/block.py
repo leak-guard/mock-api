@@ -32,7 +32,7 @@ async def get_water_block():
 
 @router.post("")
 async def post_water_block():
-    return Response(status=status.HTTP_200_OK)
+    return Response(status_code=status.HTTP_200_OK)
 
 @router.get("/schedule", response_model=Schedule)
 async def get_water_block_schedule():
@@ -48,4 +48,4 @@ async def get_water_block_schedule():
 
 @router.post("/schedule")
 async def post_water_block_schedule():
-    return Response(status=status.HTTP_200_OK)
+    return Response(status_code=status.HTTP_200_OK)
