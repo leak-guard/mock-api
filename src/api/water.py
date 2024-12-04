@@ -21,6 +21,8 @@ def get_timestamped_usages(from_timestamp, to_timestamp):
 async def get_water_usage():
     return JSONResponse({
         "flow_rate": random.randint(1000,10000),
+        "total_volume": random.randint(100000,1000000),
+        "today_volume": random.randint(50000,700000)
     })
 
 @router.get("/{from_timestamp}/{to_timestamp}")
