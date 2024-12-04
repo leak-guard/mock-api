@@ -13,3 +13,9 @@ app.include_router(criteria.router)
 @app.get("/hello")
 async def hello():
     return JSONResponse({"text":"Hello World!"})
+
+
+@app.get("/me")
+async def me():
+
+    return JSONResponse({"id":"this-is-my-id","mac":"this-is-my-mac-address"})
