@@ -46,6 +46,6 @@ async def get_water_block_schedule():
         "saturday": generate_random_day_schedule()
     }
 
-@router.post("/schedule")
+@router.put("/schedule")
 async def post_water_block_schedule():
     return Response(status_code=status.HTTP_200_OK)
