@@ -13,7 +13,7 @@ def get_timestamped_usages(from_timestamp, to_timestamp):
     
     # TODO: Support varying resolutions (more recent - more common)
     record_count = math.ceil(delta_secs / 60 + 0.01)
-    usages = {(from_timestamp + i * 60): round(random.random() * 10, 2) for i in range(record_count)}
+    usages = {(from_timestamp + i * 60): round(random.random(), 2) for i in range(record_count)}
     
     return usages
 

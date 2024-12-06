@@ -11,22 +11,39 @@ router = APIRouter(prefix="/probe")
 class ProbeCommand(BaseModel):
     verb: Literal["block", "unblock"]
 
-def get_probe_id():
-    return [random.randint(0, 4294967295) for _ in range(3)]
+def get_probe_id(i):
+    ids = [[
+      3884552546,
+      529462413,
+      3488854973
+    ],
+    [
+      3085004862,
+      47908013,
+      1135143305
+    ],
+    [
+      591958241,
+      4063424510,
+      2265439981
+    ],
+    ]
 
-def get_probe_info():
+    return ids[i]
+
+
+def get_probe_info(i):
     return {
-        "id": get_probe_id(),
+        "id": get_probe_id(i),
         "battery_level": random.randint(0, 100),
         "blocked": random.random() > 0.9
     }
 
 @router.get("")
 async def get_probes():
-    probe_count = random.randint(0, 10)
-    probe_ids = random.sample(range(256), probe_count)
+    probe_ids = random.sample(range(256), 3)
 
-    return JSONResponse({f"{probe_ids[i]}": get_probe_info() for i in range(probe_count)})
+    return JSONResponse({f"{probe_ids[i]}": get_probe_info(i) for i in range(3)})
 
 @router.get("/id/{id}")
 async def get_probe(id: int):
