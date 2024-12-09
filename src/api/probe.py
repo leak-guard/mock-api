@@ -12,7 +12,8 @@ class ProbeCommand(BaseModel):
     verb: Literal["block", "unblock"]
 
 def get_probe_id(i):
-    ids = [[
+    ids = [
+        [
       3884552546,
       529462413,
       3488854973
@@ -36,7 +37,7 @@ def get_probe_info(i):
     return {
         "id": get_probe_id(i),
         "battery_level": random.randint(0, 100),
-        "blocked": random.random() > 0.9
+        "is_alarmed": random.random() > 0.9
     }
 
 @router.get("")
