@@ -8,12 +8,8 @@ router = APIRouter(prefix="/criteria")
 
 @router.get("")
 async def get_criteria():
-    pass    # TODO
-
-@router.get("/{id}")
-async def get_criterion(id: int):
-    pass    # TODO
+    return JSONResponse({"criteria": "T,1,30,|"})
 
 @router.post("")
 async def post_criteria():
-    pass    # TODO
+    return Response(status_code=status.HTTP_200_OK)
