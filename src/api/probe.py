@@ -37,7 +37,8 @@ def get_probe_info(i):
     return {
         "id": get_probe_id(i),
         "battery_level": random.randint(0, 100),
-        "is_alerted": random.random() > 0.9
+        "is_alerted": random.random() > 0.9,
+        "last_rssi": random.randint(-100, -40),
     }
 
 @router.get("")
